@@ -1,0 +1,12 @@
+<section class="container">
+    <ul class="list-style">
+        <li *ngFor="let data of sortdata |keyvalue">
+            Class :: {{data.key}}
+            <app-student-class-list *ngFor="let student of data.value " (selectedStudent)="showStudentData($event)"
+                [student]="student">
+            </app-student-class-list>
+        </li>
+    </ul>
+</section>
+
+<aside>{{studentDetails|json}}</aside>
